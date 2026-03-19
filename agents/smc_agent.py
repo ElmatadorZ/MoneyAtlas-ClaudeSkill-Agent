@@ -1,26 +1,20 @@
-# agents/smc_agent.py
-
 from .base_agent import BaseAgent, AgentOutput
-from smc.smc_layer_masterpiece import SMCLayerEngine
+from smc.smc_wrapper import SMCWrapper
+
 
 class SMCAgent(BaseAgent):
     name = "smc"
 
     def __init__(self):
-        self.engine = SMCLayerEngine()
+        self.wrapper = SMCWrapper()
 
     async def run(self, context):
-        candles = context["candles"]
 
-        result = await self.engine.analyze(
-            symbol=context["symbol"],
-            timeframe=context["timeframe"],
-            candles=candles
-        )
+        smc_data = await self.wrapper.analyze(context)
 
         return AgentOutput(
             name=self.name,
-            data={"layers": result.layers},
+            data=smc_data,
             confidence=0.85,
-            reasoning="SMC Layer structure detected"
+            reasoning=smc_data["summary"]
         )
