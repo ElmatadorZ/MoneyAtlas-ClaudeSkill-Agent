@@ -42,3 +42,18 @@ async def run():
     logger.log(signal, result)
 
 asyncio.run(run())
+from data_feed import get_btc_price
+from memory_engine import log_trade
+
+def run():
+    price = get_btc_price()
+    
+    context = f"""
+    BTC current price: {price}
+    Analyze using Money Atlas system.
+    """
+
+    print(context)
+
+if __name__ == "__main__":
+    run()
