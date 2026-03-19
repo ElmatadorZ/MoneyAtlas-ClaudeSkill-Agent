@@ -36,3 +36,23 @@ class WarBrain:
             "scenarios": scenarios,
             "bias_warnings": warnings
         }
+        # orchestrator/war_brain.py
+
+class WarBrain:
+
+    def run(self, smc_layers, real_data):
+
+        macro_bias = real_data["macro_bias"]
+        geo_risk = real_data["geo_risk"]
+
+        decisions = []
+
+        for l in smc_layers:
+
+            if l.state == "accumulating" and macro_bias == "bearish":
+                decisions.append("Hidden accumulation under macro fear")
+
+            if geo_risk:
+                decisions.append("Geopolitical risk may distort price")
+
+        return decisions
