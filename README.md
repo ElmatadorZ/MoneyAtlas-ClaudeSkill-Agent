@@ -1,16 +1,16 @@
 # Money Atlas Intelligence OS
-### Claude Skill — Financial Market Strategic Intelligence
+### Claude Skill (Agent) — Financial Market Strategic Intelligence
 
 **Version:** 2.0  
 **Author:** Bunyawat Dechanon (ElmatadorZ)  
 **Brand:** Money Atlas / Alternative Slowbar  
-**Type:** Claude Custom Skill (SKILL.md format)
+**Type:** Custom Skill (SKILL.md format)
 
 ---
 
 ## What This Is
 
-A Claude skill that transforms financial market questions into structured, scenario-based intelligence.
+A skill that transforms financial market questions into structured, scenario-based intelligence.
 
 Not a prediction engine.  
 Not a signal bot.  
